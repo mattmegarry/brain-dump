@@ -1,0 +1,178 @@
+@import "./reset.css";
+
+/* --- TYPOGRAPHY --- */
+
+body {
+  margin: 0;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  -webkit-font-smoosnippet: antialiased;
+  -moz-osx-font-smoosnippet: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.header {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.signout-message {
+  color: red;
+  font-size: 0.5rem;
+}
+
+.user-signout {
+  font-size: 1rem;
+}
+
+.footer {
+  font-size: 0.8rem;
+}
+
+@media (min-width: 641px) {
+  .header {
+    font-size: 3rem;
+  }
+
+  .signout-message {
+    font-size: 0.8rem;
+  }
+}
+
+/* --- LAYOUT & BACKGROUNDS --- */
+
+html,
+body {
+  height: 100%;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header,
+.main,
+.footer {
+  margin: 0 5vw 0 5vw;
+}
+
+@media (min-width: 641px) {
+  .header,
+  .main,
+  .footer {
+    margin: 0 20vw 0 20vw;
+  }
+}
+
+.header-outer {
+  height: 15vh;
+  background-color: aliceblue;
+  margin-bottom: 1rem;
+}
+
+.main-outer {
+  display: flex;
+  flex: 1 0 auto;
+  align-items: stretch;
+  background-color: white;
+}
+
+.footer-outer {
+  height: 8vh;
+  flex-shrink: 0;
+  background-color: aliceblue;
+}
+
+.header {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- COMPONENTS --- */
+
+.info {
+  border: solid 1px black;
+  border-radius: 1rem;
+  padding: 1rem 2rem 2rem 1rem;
+  background-color: aliceblue;
+  box-shadow: 0.5rem 1rem 1.8rem lightskyblue;
+  margin-bottom: 1rem;
+}
+
+.item {
+  border-radius: 0.4rem;
+  padding: 1rem 2rem 2rem 1rem;
+  background-color: aliceblue;
+  box-shadow: 0.5rem 1rem 1.8rem lightskyblue;
+  margin-bottom: 2rem;
+  white-space: pre-wrap;
+}
+
+div.create-text-snippet {
+  border: solid 1px black;
+  border-radius: 1rem;
+  padding: 1rem 2rem 2rem 1rem;
+  background-color: aliceblue;
+  box-shadow: 0.5rem 1rem 1.8rem lightskyblue;
+  margin-bottom: 1rem;
+}
+
+.signout {
+  float: right;
+  margin-bottom: 0.5rem;
+}
+
+textarea.create-text-snippet,
+textarea.edit-text-snippet {
+  width: 100%;
+}
+
+input.create-text-snippet,
+input.save-edit-text-snippet {
+  float: right;
+}
+
+div.cancel {
+  display: flex;
+}
+
+input.cancel {
+  margin-left: auto;
+}
+
+@media (min-width: 641px) {
+  .item,
+  .info,
+  div.create-text-snippet {
+    margin: 0 2vw 2rem;
+  }
+
+  .horizontal {
+    display: flex;
+    flex-direction: row;
+  }
+}
