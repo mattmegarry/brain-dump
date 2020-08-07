@@ -3,13 +3,13 @@ import TextareaAutosize from "react-textarea-autosize";
 
 const TextSnippet = props => {
   const {
-    textSnippet,
-    changeOneAndFetchTextSnippets,
+    snippet,
+    changeOneAndFetchSnippets,
     inputMode,
     handleInputMode
   } = props;
-  const { id, text } = textSnippet || "";
-  const [newText, setNewText] = useState(text);
+  const { snippetId, snippetText } = snippet || "";
+  const [newSnippetText, setNewSnippetText] = useState(snippetText);
 
   const handleSubmit = async event => {
     if (event) {
@@ -17,23 +17,23 @@ const TextSnippet = props => {
     }
 
     const body = {
-      id,
-      newText
+      snippetId,
+      newSnippetText
     };
 
-    handleInputMode(id);
-    await changeOneAndFetchTextSnippets(body, "/update");
+    handleInputMode(snippetId);
+    await changeOneAndFetchSnippets(body, "/update");
   };
 
   const deleteTextSnippet = async () => {
-    const body = { id };
+    const body = { snippetId };
 
-    handleInputMode(id);
-    await changeOneAndFetchTextSnippets(body, "/delete");
+    handleInputMode(snippetId);
+    await changeOneAndFetchSnippets(body, "/delete");
   };
 
   const dispatchInputModeInstruction = () => {
-    handleInputMode(id);
+    handleInputMode(snippetId);
   };
 
   return inputMode ? (
@@ -49,8 +49,8 @@ const TextSnippet = props => {
       <form onSubmit={event => handleSubmit(event)}>
         <TextareaAutosize
           className="edit-text-snippet"
-          value={newText}
-          onChange={event => setNewText(event.target.value)}
+          value={newSnippetText}
+          onChange={event => setNewSnippetText(event.target.value)}
         />
         <div className="text-snippet-control-buttons">
           <input
@@ -69,7 +69,7 @@ const TextSnippet = props => {
     </div>
   ) : (
     <div className="item" onClick={dispatchInputModeInstruction}>
-      {text}
+      {snippetText}
     </div>
   );
 };

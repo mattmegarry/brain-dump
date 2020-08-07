@@ -132,7 +132,7 @@ body {
   white-space: pre-wrap;
 }
 
-div.create-text-snippet {
+div.create-snippet {
   border: solid 1px black;
   border-radius: 1rem;
   padding: 1rem 2rem 2rem 1rem;
@@ -146,12 +146,12 @@ div.create-text-snippet {
   margin-bottom: 0.5rem;
 }
 
-textarea.create-text-snippet,
+textarea.create-snippet,
 textarea.edit-text-snippet {
   width: 100%;
 }
 
-input.create-text-snippet,
+input.create-snippet,
 input.save-edit-text-snippet {
   float: right;
 }
@@ -167,7 +167,7 @@ input.cancel {
 @media (min-width: 641px) {
   .item,
   .info,
-  div.create-text-snippet {
+  div.create-snippet {
     margin: 0 2vw 2rem;
   }
 

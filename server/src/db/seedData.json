@@ -3,31 +3,31 @@
     {
       "email": "jenny@jenny.com",
       "password": "jennyYeah123",
-      "textSnippets": [
-        { "text": "Jenny likes apples" },
+      "snippets": [
+        { "snippetText": "Jenny likes apples" },
         {
-          "text": "Marx did not simply dismiss capitalism. He was impressed by it. He argued that it has been the most productive system that the world has seen."
+          "snippetText": "Marx did not simply dismiss capitalism. He was impressed by it. He argued that it has been the most productive system that the world has seen."
         },
         {
-          "text": "Note to self: Make food for the freezer so you have easy meals ready to eat when feeling lazy!"
+          "snippetText": "Note to self: Make food for the freezer so you have easy meals ready to eat when feeling lazy!"
         },
         {
-          "text": "Marx did not seek the abolition of all property. He did not want the vast majority of people to have fewer material goods. He was not an anti-materialist utopian. What he opposed was private property — the vast amounts of property and concentrated wealth owned by capitalists, the bourgeoisie. As a matter of fact, at the end of the passage below, he and Engels derisively accuse capitalism of depriving people of their “self-earned property.”"
+          "snippetText": "Marx did not seek the abolition of all property. He did not want the vast majority of people to have fewer material goods. He was not an anti-materialist utopian. What he opposed was private property — the vast amounts of property and concentrated wealth owned by capitalists, the bourgeoisie. As a matter of fact, at the end of the passage below, he and Engels derisively accuse capitalism of depriving people of their “self-earned property.”"
         }
       ]
     },
     {
       "email": "jamal@jamal.com",
       "password": "jamalYeah123",
-      "textSnippets": [
-        { "text": "Jamal likes oranges" },
+      "snippets": [
+        { "snippetText": "Jamal likes oranges" },
         {
-          "text": "“Individual capitalists, in short, behave in such a way as to threaten the conditions that permit the reproduction of the capitalist class.” -- David Harvey"
+          "snippetText": "“Individual capitalists, in short, behave in such a way as to threaten the conditions that permit the reproduction of the capitalist class.” -- David Harvey"
         },
         {
-          "text": "“Technological change can become 'fetishized' as a 'thing in itself', as an exogenous guiding force in the history of capitalism.” -- David Harvey"
+          "snippetText": "“Technological change can become 'fetishized' as a 'thing in itself', as an exogenous guiding force in the history of capitalism.” -- David Harvey"
         },
-        { "text": "Remember Jenny's birthday" }
+        { "snippetText": "Remember Jenny's birthday" }
       ]
     }
   ]

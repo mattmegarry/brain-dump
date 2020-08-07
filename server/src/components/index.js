@@ -5,10 +5,12 @@ const apiRouter = express.Router();
 
 import userRouter from "./User";
 import authRouter from "./Auth";
-import textSnippetRouter from "./TextSnippet";
+import collectionRouter from "./Collection";
+import snippetRouter from "./Snippet";
 
 apiRouter.use("/users", userRouter);
 apiRouter.use("/users/auth", authRouter);
-apiRouter.use("/text-snippets", textSnippetRouter);
+apiRouter.use("/collections", collectionRouter);
+apiRouter.use("/snippets", snippetRouter);
 
 export default apiRouter;

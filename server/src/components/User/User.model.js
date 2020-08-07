@@ -6,9 +6,9 @@ import db from "../../db";
 
 const create = async (email, passwordHash) => {
   const query = `INSERT INTO
-  users(id, email, password_digest, created_at, updated_at, email_verified)
+  users(user_id, email, password_digest, created_at, updated_at, email_verified)
   VALUES($1, $2, $3, $4, $5, $6)
-  returning id`; // TO DO: EMAIL VERIFICATION FLOW - REMOVE email_verified and $6
+  returning user_id`; // TO DO: EMAIL VERIFICATION FLOW - REMOVE email_verified and $6
 
   const values = [
     uuidv4(),
@@ -29,7 +29,7 @@ const create = async (email, passwordHash) => {
 
 const findOneByEmailWithoutPassword = async email => {
   const query = `
-  SELECT id, email, email_verified, created_at, updated_at FROM users WHERE email = $1
+  SELECT user_id, email, email_verified, created_at, updated_at FROM users WHERE email = $1
   `;
 
   const values = [email];

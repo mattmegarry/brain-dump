@@ -1,11 +1,11 @@
 import React from "react";
 
-import TextSnippets from "./TextSnippets";
+import Snippets from "./Snippets";
 
 const Home = props => {
   const { loggedIn, clearState } = props;
   return loggedIn ? (
-    <TextSnippets clearState={clearState} />
+    <Snippets clearState={clearState} />
   ) : (
     <div className="info">
       <p>WELCOME to the Hompage</p>

@@ -1,14 +1,14 @@
 "use strict";
 
-import { TextSnippet } from "./TextSnippet.model";
+import { Snippet } from "./Snippet.model";
 import Respond from "../../utils/responses";
 
 export const getMany = async (req, res, next) => {
   const userId = req.trustedUserId;
 
   try {
-    const textSnippets = await TextSnippet.getManyByUserId(userId);
-    res.locals = Respond.success(textSnippets);
+    const snippets = await Snippet.getManyByUserId(userId);
+    res.locals = Respond.success(snippets);
   } catch (err) {
     console.log(err);
     res.locals = Respond.opaqueError();
@@ -18,14 +18,14 @@ export const getMany = async (req, res, next) => {
 
 export const createAndGetMany = async (req, res, next) => {
   const userId = req.trustedUserId;
-  const { text } = req.body;
+  const { snippetText } = req.body;
 
   try {
-    if (text) {
-      await TextSnippet.create(userId, text);
+    if (snippetText) {
+      await Snippet.create(userId, snippetText);
     }
-    const textSnippets = await TextSnippet.getManyByUserId(userId);
-    res.locals = Respond.success(textSnippets);
+    const snippets = await Snippet.getManyByUserId(userId);
+    res.locals = Respond.success(snippets);
   } catch (err) {
     console.log(err);
     res.locals = Respond.opaqueError();
@@ -35,14 +35,15 @@ export const createAndGetMany = async (req, res, next) => {
 
 export const updateOne = async (req, res, next) => {
   const userId = req.trustedUserId;
-  const { id, newText } = req.body;
+  const { snippetId, newSnippetText } = req.body;
+  console.log(req.body);
 
   try {
-    if (newText) {
-      await TextSnippet.update(id, userId, newText);
+    if (newSnippetText) {
+      await Snippet.update(snippetId, userId, newSnippetText);
     }
-    const textSnippets = await TextSnippet.getManyByUserId(userId);
-    res.locals = Respond.success(textSnippets);
+    const snippets = await Snippet.getManyByUserId(userId);
+    res.locals = Respond.success(snippets);
   } catch (err) {
     console.log(err);
     res.locals = Respond.opaqueError();
@@ -52,14 +53,14 @@ export const updateOne = async (req, res, next) => {
 
 export const deleteOneAndGetMany = async (req, res, next) => {
   const userId = req.trustedUserId;
-  const { id } = req.body;
+  const { snippetId } = req.body;
 
   try {
-    if (id) {
-      await TextSnippet.deleteOne(id, userId);
+    if (snippetId) {
+      await Snippet.deleteOne(snippetId, userId);
     }
-    const textSnippets = await TextSnippet.getManyByUserId(userId);
-    res.locals = Respond.success(textSnippets);
+    const snippets = await Snippet.getManyByUserId(userId);
+    res.locals = Respond.success(snippets);
   } catch (err) {
     console.log(err);
     res.locals = Respond.opaqueError();

@@ -28,8 +28,8 @@ export const login = async (req, res, next) => {
 
       if (user && passwordIsCorrect) {
         res.locals = Respond.success(userSafe);
-        res.locals.data.token = await issueJWTForLocalStorage(userSafe.id);
-        const cookie = await issueJWTForCookie(userSafe.id);
+        res.locals.data.token = await issueJWTForLocalStorage(userSafe.userId);
+        const cookie = await issueJWTForCookie(userSafe.userId);
         res.cookie("auth", cookie, cookieConfig());
       } else {
         res.locals = Respond.loginRejected();
