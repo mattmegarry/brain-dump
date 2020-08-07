@@ -14,7 +14,8 @@
         {
           "snippetText": "Marx did not seek the abolition of all property. He did not want the vast majority of people to have fewer material goods. He was not an anti-materialist utopian. What he opposed was private property — the vast amounts of property and concentrated wealth owned by capitalists, the bourgeoisie. As a matter of fact, at the end of the passage below, he and Engels derisively accuse capitalism of depriving people of their “self-earned property.”"
         }
-      ]
+      ],
+      "collections": []
     },
     {
       "email": "jamal@jamal.com",
@@ -27,7 +28,19 @@
         {
           "snippetText": "“Technological change can become 'fetishized' as a 'thing in itself', as an exogenous guiding force in the history of capitalism.” -- David Harvey"
         },
-        { "snippetText": "Remember Jenny's birthday" }
+        { "snippetText": "Potatoes" },
+        { "snippetText": "Chocolate" },
+        { "snippetText": "Get up" },
+        { "snippetText": "Make the bed" },
+        { "snippetText": "Do some work" },
+        { "snippetText": "Have Lunch" }
+      ],
+      "collections": [
+        { "collectionName": "Essay notes" },
+        { "collectionName": "Shopping list" },
+        { "collectionName": "New years resolutions" },
+        { "collectionName": "Dialectics Essay" },
+        { "collectionName": "Daily Routine" }
       ]
     }
   ]

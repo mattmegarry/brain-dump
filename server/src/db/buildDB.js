@@ -6,6 +6,7 @@ import * as seedData from "./seedData.json";
 import { User } from "../components/User/User.model";
 import { Snippet } from "../components/Snippet/Snippet.model";
 import { hashSaltPassword } from "../utils/auth";
+import { Collection } from "../components/Collection/Collection.model";
 
 const users = `CREATE TABLE IF NOT EXISTS
       users(
@@ -77,7 +78,7 @@ async function dropAllTables() {
   }
 }
 
-async function seedUsersAndtextSnippets() {
+async function seedUsersAndData() {
   try {
     await asyncForEach(seedData.users, async user => {
       const { email, password } = user;
@@ -85,6 +86,9 @@ async function seedUsersAndtextSnippets() {
       const createdUser = await User.create(email, passwordDigest);
       await asyncForEach(user.snippets, async snippet => {
         await Snippet.create(createdUser.userId, snippet.snippetText);
+      });
+      await asyncForEach(user.collections, async collection => {
+        await Collection.create(createdUser.userId, collection.collectionName);
       });
     });
     return true;
@@ -96,7 +100,7 @@ async function seedUsersAndtextSnippets() {
 async function dropAndBuildTables() {
   await dropAllTables();
   await createAllTables();
-  await seedUsersAndtextSnippets();
+  await seedUsersAndData();
   console.log("Done");
 }
 
