@@ -39,20 +39,19 @@ const collections = `CREATE TABLE IF NOT EXISTS
         updated_at TIMESTAMP NOT NULL
       )`;
 
-const snippetsCollections = `CREATE TABLE IF NOT EXISTS
-      snippets_collections (
-        CONSTRAINT snippets_collections_pkey PRIMARY KEY (snippet_id, collection_id)
-        snippet_id UUID REFERENCES snippets(snippet_id) ON UPDATE CASCADE ON DELETE CASCADE,
-        collection_id UUID REFERENCES collections(collection_id) ON UPDATE CASCADE,        
+const collectionsSnippets = `CREATE TABLE IF NOT EXISTS
+      collections_snippets (
+        CONSTRAINT snippets_collections_pkey PRIMARY KEY (collection_id, snippet_id),
+        collection_id UUID,
+        snippet_id UUID,
+        created_at TIMESTAMP NOT NULL,
+        FOREIGN KEY(collection_id) REFERENCES collections(collection_id) ON UPDATE CASCADE,
+        FOREIGN KEY(snippet_id) REFERENCES snippets(snippet_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 `;
 
-const tableQueries = [users, snippets, collections /* snippetsCollections */];
-const tableNames = [
-  "users",
-  "snippets",
-  "collections" /* "snippets_collections" */
-];
+const tableQueries = [users, snippets, collections, collectionsSnippets];
+const tableNames = ["users", "snippets", "collections", "collections_snippets"];
 
 async function createAllTables() {
   try {
@@ -89,6 +88,25 @@ async function seedUsersAndData() {
       });
       await asyncForEach(user.collections, async collection => {
         await Collection.create(createdUser.userId, collection.collectionName);
+      });
+      await asyncForEach(user.snippets, async snippet => {
+        // snippet_text and collection_name will be unique in our development data, so the following is fine...
+        // (Would be BAD in production...)
+        const collectionRes = await db.queryReturningOne(
+          `SELECT collection_id FROM collections WHERE collection_name=$1`,
+          [snippet.collectionName]
+        );
+        const snippetRes = await db.queryReturningOne(
+          `SELECT snippet_id FROM snippets WHERE snippet_text=$1`,
+          [snippet.snippetText]
+        );
+        // Our seed data had some cases of snippets that do not have a collection...
+        if (collectionRes) {
+          await Collection.linkSnippet(
+            collectionRes.collectionId,
+            snippetRes.snippetId
+          );
+        }
       });
     });
     return true;

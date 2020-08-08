@@ -24,6 +24,20 @@ const create = async (userId, collectionName, collectionType = "Default") => {
   }
 };
 
+const linkSnippet = async (collectionId, snippetId) => {
+  const query = `INSERT into collections_snippets VALUES($1, $2, $3) RETURNING *`;
+
+  const values = [collectionId, snippetId, moment(new Date())];
+
+  try {
+    const collectionSnippet = await db.queryReturningOne(query, values);
+    return collectionSnippet;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 export const Collection = {
-  create
+  create,
+  linkSnippet
 };

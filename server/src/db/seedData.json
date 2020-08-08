@@ -4,42 +4,65 @@
       "email": "jenny@jenny.com",
       "password": "jennyYeah123",
       "snippets": [
-        { "snippetText": "Jenny likes apples" },
         {
-          "snippetText": "Marx did not simply dismiss capitalism. He was impressed by it. He argued that it has been the most productive system that the world has seen."
+          "snippetText": "Calculate expected ROI",
+          "collectionName": "Business Plan"
         },
         {
-          "snippetText": "Note to self: Make food for the freezer so you have easy meals ready to eat when feeling lazy!"
+          "snippetText": "Call angel investor",
+          "collectionName": "Business Plan"
         },
+        { "snippetText": "Finish college" },
         {
-          "snippetText": "Marx did not seek the abolition of all property. He did not want the vast majority of people to have fewer material goods. He was not an anti-materialist utopian. What he opposed was private property — the vast amounts of property and concentrated wealth owned by capitalists, the bourgeoisie. As a matter of fact, at the end of the passage below, he and Engels derisively accuse capitalism of depriving people of their “self-earned property.”"
-        }
+          "snippetText": "Is my business idea even legal!?",
+          "collectionName": "Business Plan"
+        },
+        { "snippetText": "Become fluent in Spanish" },
+        {
+          "snippetText": "Call Gabriel",
+          "collectionName": "To Do list"
+        },
+        { "snippetText": "Travel to 100 countries" },
+        { "snippetText": "Buy socks", "collectionName": "To Do list" },
+        { "snippetText": "Email Mike", "collectionName": "To Do list" },
+        { "snippetText": "Read 100 books" },
+        { "snippetText": "Book the airbnb", "collectionName": "To Do list" }
       ],
-      "collections": []
+      "collections": [
+        { "collectionName": "Business Plan" },
+        { "collectionName": "5 Year Goals" },
+        { "collectionName": "To Do list" }
+      ]
     },
     {
       "email": "jamal@jamal.com",
       "password": "jamalYeah123",
       "snippets": [
-        { "snippetText": "Jamal likes oranges" },
         {
-          "snippetText": "“Individual capitalists, in short, behave in such a way as to threaten the conditions that permit the reproduction of the capitalist class.” -- David Harvey"
+          "snippetText": "Marx did not seek the abolition of all property. He did not want the vast majority of people to have fewer material goods. He was not an anti-materialist utopian. What he opposed was private property — the vast amounts of property and concentrated wealth owned by capitalists, the bourgeoisie. As a matter of fact, at the end of the passage below, he and Engels derisively accuse capitalism of depriving people of their “self-earned property.”",
+          "collectionName": "Political Economy Essay"
         },
         {
-          "snippetText": "“Technological change can become 'fetishized' as a 'thing in itself', as an exogenous guiding force in the history of capitalism.” -- David Harvey"
+          "snippetText": "“Technological change can become 'fetishized' as a 'thing in itself', as an exogenous guiding force in the history of capitalism.” -- David Harvey",
+          "collectionName": "Political Economy Essay"
         },
         { "snippetText": "Potatoes" },
-        { "snippetText": "Chocolate" },
-        { "snippetText": "Get up" },
-        { "snippetText": "Make the bed" },
+        { "snippetText": "Get up", "collectionName": "Daily Routine" },
+        {
+          "snippetText": "Marx did not simply dismiss capitalism. He was impressed by it. He argued that it has been the most productive system that the world has seen."
+        },
+        { "snippetText": "Make the bed", "collectionName": "Daily Routine" },
         { "snippetText": "Do some work" },
-        { "snippetText": "Have Lunch" }
+        { "snippetText": "Chocolate", "collectionName": "Shopping List" },
+        {
+          "snippetText": "“Individual capitalists, in short, behave in such a way as to threaten the conditions that permit the reproduction of the capitalist class.” -- David Harvey",
+          "collectionName": "Political Economy Essay"
+        },
+        { "snippetText": "Have Lunch", "collectionName": "Daily Routine" }
       ],
       "collections": [
-        { "collectionName": "Essay notes" },
-        { "collectionName": "Shopping list" },
-        { "collectionName": "New years resolutions" },
-        { "collectionName": "Dialectics Essay" },
+        { "collectionName": "Political Economy Essay" },
+        { "collectionName": "Shopping List" },
         { "collectionName": "Daily Routine" }
       ]
     }
