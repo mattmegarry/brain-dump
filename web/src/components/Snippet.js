@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 
-const TextSnippet = props => {
+const Snippet = props => {
   const {
     snippet,
     changeOneAndFetchSnippets,
@@ -74,4 +74,4 @@ const TextSnippet = props => {
   );
 };
 
-export default TextSnippet;
+export default Snippet;
