@@ -16,7 +16,7 @@ code {
     monospace;
 }
 
-.header {
+.heading {
   font-size: 2rem;
   font-weight: 700;
 }
@@ -35,7 +35,7 @@ code {
 }
 
 @media (min-width: 641px) {
-  .header {
+  .heading {
     font-size: 3rem;
   }
 
@@ -92,9 +92,20 @@ body {
 
 .header {
   height: 100%;
+}
+
+.heading-user-details-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
 }
 

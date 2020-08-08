@@ -9,6 +9,7 @@ import {
 import Login from "./components/Login";
 import Signout from "./components/Signout";
 import Home from "./components/Home";
+import Nav from "./components/Nav";
 import { openRequest } from "./utils/http";
 
 function App() {
@@ -59,14 +60,24 @@ function App() {
     <Router>
       <div className="header-outer">
         <div className="header">
-          <h1>My App</h1>
+          <div className="heading-user-details-container">
+            <h1 className="heading">My App</h1>
+            {loggedIn ? (
+              <div className="user-signout">
+                <Signout clearState={clearState} />
+                <p>{email}</p>
+              </div>
+            ) : (
+              <NavLink to="/login">Login</NavLink>
+            )}
+          </div>
           {loggedIn ? (
-            <div className="user-signout">
-              <Signout clearState={clearState} />
-              <p>{email}</p>
+            <div className="nav-container">
+              {" "}
+              <Nav />
             </div>
           ) : (
-            <NavLink to="/login">Login</NavLink>
+            ""
           )}
         </div>
       </div>
@@ -76,6 +87,13 @@ function App() {
             <Route
               exact
               path="/"
+              render={props => (
+                <Home {...props} loggedIn={loggedIn} clearState={clearState} />
+              )}
+            />
+            <Route
+              exact
+              path="/snippets"
               render={props => (
                 <Home {...props} loggedIn={loggedIn} clearState={clearState} />
               )}
